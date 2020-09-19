@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
+<link rel="stylesheet" href="styles.css"> 
+</head>
+<script>
+function flip() {
+    $('.card').toggleClass('flipped');
+}
+
+
+function flip1() {
+    $('.card').removeClass('flipped');
+}
+
+
+$(document).ready(function(){
+$('#cardNum').mask("**** **** **** ****" ,{placeholder:"**** **** **** **** "});
+$("#ExpiryDate").mask("99/99");
+
+ $("#cardNum").keyup(function() {
+    var value = $( this ).val();
+    $( "#numberOfCard" ).text(value);
+
+  });
+
+  $("#ExpiryDate").keyup(function() {
+    var value = $( this ).val();
+    $( "#date" ).text( value );
+
+  });
+
+ $("#name").keyup(function() {
+    var value = $( this ).val();
+    $( "#yourname" ).text( value );
+   
+  });
+  
+ $("#secureCode").change(function() {
+    var value = $( this ).val();
+    $( "#code" ).text( value );
+
+  });
+
+});
+
+</script>
+<body>
+
+
+<div class="container"> 
+
+<div class="head" style="display:flex;  align-items: stretch; color:green; font-weight:bold">
+<p style="flex-grow: 1">  </p>
+<p style="flex-grow: 6"> < </p>
+
+<p style="flex-grow: 8">  Credit Card </p>
+</div>
+
+
+  <div class="card">
+
+
+
+<div class="front">
+<img id="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTFTwQN9FTci4bZb9TGP1V11Jh__T-lru7D0A&usqp=CAU"
+width="50px" height="50px" 
+>
+<br>
+<br>
+<div class="mid">
+<p id="numberOfCard">**** **** **** **** <p>
+</div>
+
+<div class="mid">
+<p> Card Holder<p>
+<p> Expiry</p>
+</div>
+
+
+<div class="mid">
+<p id="yourname" > </p>
+<p id="date"> </p>
+</div>
+
+</div >
+
+
+
+
+<div class="back">
+
+
+<br>
+
+<div style=" background-color: black; width:90% ;height:50px "> </div>
+<div class="mid">
+<div style="background-color: gray; width:150px ;height:50px " > </div>
+<p id="code"> </p>
+</div>
+
+<div style="background-color:lightgray; width:90% ;height:30px "> </div>
+</div >
+
+</div>
+</div>
+
+
+<div  class="information">
+
+
+
+<br>
+<p>Card Number </p>
+<input type="text" style=" width:100%" id="cardNum" onkeyup="flip1()" placeholder="**** **** **** ****">
+
+<div class="mid"> 
+<p> Expiry date</p>
+
+<p> secure Code</p>
+</div >
+
+<div class="mid"> 
+<input type="text" style=" width:35%" id="ExpiryDate" onkeyup="flip1()" class="input">
+
+<input type="text" style=" width:35%" id="secureCode" onchange="flip()" maxlength="3" class="input">
+</div >
+
+
+<p>Name on card </p>
+<input type="text"  style=" width:100% ;" id="name" onkeyup="flip1()" class="input">
+
+<br>
+<br>
+<p></p>
+<input type="button"  class="input" style=" width:100%;height:30px ; border:none; border-radius: 5%; background-color:GoldenRod" value="Pay" >  
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+.container {
+  background-color: AliceBlue;
+  width: 320px;
+  height: 270px;
+  position: relative;
+  perspective: 800px;
+}
+.card {
+  width: 90%;
+  height: 70%;
+  position: absolute;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+}
+.card .front,
+.card .back {
+  word-break: break-all;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 15px;
+  top: 0px;
+  backface-visibility: hidden;
+  border-radius: 5%;
+  box-shadow: 0 10px 6px -6px #777;
+}
+.card .front {
+  background: NavajoWhite;
+}
+.card .front img {
+  float: right;
+  border-radius: 15%;
+}
+.card .front .mid {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  height: 50px;
+}
+.card .back {
+  position: absolute;
+  left: -15px;
+  top: 20px;
+  background: NavajoWhite;
+  transform: rotateY(180deg);
+}
+.card .back .mid {
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px;
+}
+.card.flipped {
+  transform: rotateY(180deg);
+}
+.information {
+  position: absolute;
+  left: 7px;
+  top: 270px;
+  background-color: white;
+  color: green;
+  border-radius: 5%;
+  width: 320px;
+  height: 300px;
+  word-break: break-all;
+}
+.information input:focus {
+  border: 1px solid green;
+}
+.information .mid {
+  display: flex;
+  justify-content: space-between;
+}

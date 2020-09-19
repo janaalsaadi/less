@@ -1,0 +1,77 @@
+.size(@width,@height){
+  width:@width;
+  height: @height;
+}
+.position(@type ,@left,@top ){
+  position: @type;
+  left: @left;
+  top: @top;
+}
+
+.display(@type,@content){
+ display:@type;
+ justify-content: @content;
+}
+.container {
+  background-color: AliceBlue;
+  .size(320px, 270px);
+  position: relative;
+  perspective: 800px;
+}
+.card {
+
+  .size(90%, 70%);
+  position: absolute;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  .front , .back{
+    word-break: break-all;
+    .size(100%, 100%);
+    display: block;
+    .position(absolute,15px , 0px);
+    backface-visibility: hidden;  
+    border-radius: 5%;
+    box-shadow: 0 10px 6px -6px #777;
+  }
+}
+.card .front {
+background: NavajoWhite;
+img{
+  float:right;
+   border-radius: 15%;
+     }
+     .mid{
+      .display(flex, space-between);
+      padding:5px;
+      height:50px;
+     }
+}
+.card .back {
+  .position(absolute,-15px,20px);
+  background: NavajoWhite;
+  transform: rotateY( 180deg );
+  .mid{
+    .display(flex, flex-start);
+    padding:5px;
+   }
+}
+.card.flipped {
+  transform: rotateY( 180deg );
+}
+.information{
+   input:focus {
+    border: 1px solid green;
+  }
+  .position(absolute,7px,270px);
+  background-color: white;
+  color:green;
+  border-radius: 5%;
+  .size(320px, 300px);
+  word-break: break-all;
+  .mid{
+     
+      .display(flex, space-between);
+  }
+
+}
