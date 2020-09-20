@@ -9,7 +9,7 @@ $("#ExpiryDate").mask("99/99");
 
   });
 
-  $("#cardNum").keyup(function() {
+  $("#cardNum").focus(function() {
     $('.card').removeClass('flipped');
   });
 
@@ -21,7 +21,7 @@ $("#ExpiryDate").mask("99/99");
     $( "#date" ).text( value );
   });
 
-  $("#ExpiryDate").keyup(function() {
+  $("#ExpiryDate").focus(function() {
     $('.card').removeClass('flipped');
   });
 
@@ -32,7 +32,7 @@ $("#ExpiryDate").mask("99/99");
     $( "#yourname" ).text( value );
   });
 
-  $("#name").keyup(function() {
+  $("#name").focus(function() {
     $('.card').removeClass('flipped');
   });
 
@@ -45,7 +45,7 @@ $("#ExpiryDate").mask("99/99");
 
   });
 
-  $("#secureCode").change(function() {
+  $("#secureCode").focus(function() {
     $('.card').toggleClass('flipped');
   });
 
