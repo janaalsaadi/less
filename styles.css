@@ -51,6 +51,21 @@
   justify-content: flex-start;
   padding: 5px;
 }
+.card .back .top-div {
+  width: 90%;
+  height: 50px;
+  background-color: black;
+}
+.card .back .mid-div {
+  width: 150px;
+  height: 50px;
+  background-color: gray;
+}
+.card .back .last-div {
+  width: 90%;
+  height: 30px;
+  background-color: lightgray;
+}
 .card.flipped {
   transform: rotateY(180deg);
 }
@@ -71,4 +86,19 @@
 .information .mid {
   display: flex;
   justify-content: space-between;
+}
+.information #cardNum,
+.information #name {
+  width: 100%;
+}
+.information #ExpiryDate,
+.information #secureCode {
+  width: 35%;
+}
+.information #pay {
+  width: 100%;
+  height: 30px ;
+  border: none;
+  border-radius: 5%;
+  background-color: GoldenRod;
 }
